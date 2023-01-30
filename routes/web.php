@@ -26,3 +26,15 @@ Route::controller(App\Http\Controllers\MemberController::class)->group(function 
     Route::get('/index/book', 'book');
     Route::get('/index/about', 'about');
 });
+
+
+Route::controller(App\Http\Controllers\AdminController::class)->group(function () {
+Route::get('/admin/dashboard', 'index'); 
+Route::get('/admin/message', 'message');
+Route::post('/admin/dashboard', 'sendMessage');
+Route::get('/admin/viewmessage', 'view');
+
+});
+
+
+
